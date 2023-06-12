@@ -136,7 +136,7 @@ const Header = () => {
                                     <div style={{textAlign:'left'}} className="site-logo">
 
                                         <Link href={"/"} locale={i18n?.language}>
-                                           <Image width={100} height={100} src={'/media/rama_group.png'} alt={'logo'}/>
+                                           <Image width={200} height={200} src={'/media/rama_group.png'} alt={'logo'}/>
                                         </Link>
                                     </div>
                                 </div>
