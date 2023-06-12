@@ -12,6 +12,7 @@ const About = ({about,partner}:{about:productItem[], partner:partnerItem[]}) => 
     const {t,i18n} = useTranslation('common')
 
     const settingsBrand = {
+        autoplay:true,
         arrows: false,
         infinite: true,
         speed: 500,

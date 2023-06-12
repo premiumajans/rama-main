@@ -56,7 +56,7 @@ const SyncSlider = ({product}: { product: productItem }) => {
 
                     <div className="img-item slick-slide">
                         <span className="img-thumbnail-scroll">
-                            <Image width="600" height="600"
+                            <Image  style={{width:116, height:100}} width="600" height="600"
                                  src={process.env['NEXT_PUBLIC_MAIN_PATH_WITHOUT_API'] + product?.photo}
                                  alt={product.name}/>
                         </span>
@@ -64,7 +64,7 @@ const SyncSlider = ({product}: { product: productItem }) => {
                     {product.photos?.map(item => {
                         return   <div key={product.id} className="img-item slick-slide">
                         <span className="img-thumbnail-scroll">
-                            <Image width="600" height="600"
+                            <Image  style={{width:116, height:100}} width="600" height="600"
                                  src={process.env['NEXT_PUBLIC_MAIN_PATH_WITHOUT_API'] + item.photo}
                                  alt={product.name}/>
                         </span>
@@ -80,7 +80,7 @@ const SyncSlider = ({product}: { product: productItem }) => {
 
                     <div className="img-item slick-slide">
                         <span className="img-thumbnail-scroll">
-                            <Image width="600" height="600"
+                            <Image style={{ height:600}} width="600" height="600"
                                  src={process.env['NEXT_PUBLIC_MAIN_PATH_WITHOUT_API'] + product.photo}
                                  alt={product.name}/>
                         </span>
@@ -88,7 +88,7 @@ const SyncSlider = ({product}: { product: productItem }) => {
                     {product.photos?.map(item => {
                         return   <div key={product.id} className="img-item slick-slide">
                         <span className="img-thumbnail-scroll">
-                            <Image width="600" height="600"
+                            <Image style={{height:600}} width="600" height="600"
                                  src={process.env['NEXT_PUBLIC_MAIN_PATH_WITHOUT_API'] + item?.photo}
                                  alt={product.name}/>
                         </span>
