@@ -22,9 +22,10 @@ function Home({sliders}:{sliders:sliderItem[]}) {
         autoplay:true,
         dots: true,
         infinite: true,
-        speed: 500,
+        speed: 900,
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        autoplaySpeed: 5000,
     };
 
     return <>
