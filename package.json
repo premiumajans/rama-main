@@ -9,12 +9,40 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.1.0",
+    "@types/node": "20.2.4",
+    "@types/react": "18.2.7",
+    "@types/react-dom": "18.2.4",
+    "aos": "^2.3.4",
+    "eslint": "8.41.0",
+    "eslint-config-next": "13.4.4",
+    "fslightbox-react": "^1.7.4",
+    "i18next": "^22.5.0",
+    "i18next-browser-languagedetector": "^7.0.2",
+    "mobx": "^6.9.0",
+    "mobx-react": "^7.6.0",
+    "mobx-react-lite": "^3.4.3",
     "next": "13.4.4",
+    "next-i18next": "^13.2.2",
+    "ni18n": "^1.1.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.44.2",
+    "react-html-parser": "^2.0.2",
+    "react-i18next": "^12.3.1",
+    "react-slick": "^0.29.0",
+    "reactstrap": "^9.1.10",
+    "sass": "^1.62.1",
+    "slick-carousel": "^1.8.1",
+    "slick-slider": "^1.8.2",
+    "sweetalert2": "^11.7.10",
+    "typescript": "5.0.4",
+    "yup": "^1.2.0"
   },
   "devDependencies": {
-    "eslint": "8.41.0",
-    "eslint-config-next": "13.4.4"
+    "@types/aos": "^3.0.4",
+    "@types/fslightbox-react": "^1.7.3",
+    "@types/react-html-parser": "^2.0.2",
+    "@types/react-slick": "^0.23.10"
   }
 }

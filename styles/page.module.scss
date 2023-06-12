@@ -1,0 +1,13 @@
+.home_video {
+    max-height: 80vh;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    .center {
+        color: white;
+        position: absolute;
+        left: 5%;
+        top:50%;
+        transform: translateY(-50%);
+    }
+}
