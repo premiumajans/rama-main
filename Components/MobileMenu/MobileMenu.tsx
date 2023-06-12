@@ -11,7 +11,7 @@ const MobileMenu = () => {
 
     return <div className={"site-mobile-navigation mm-wrapper " + (menu ? 'active' : '')}><span onClick={changeMenu}
                                                                                                 id="remove-megamenu"
-                                                                                                className="remove-megamenu icon-remove">Close</span>
+                                                                                                className="remove-megamenu icon-remove"></span>
         <nav id="mobile-main-menu" className="mm-menu">
             <div className="mm-panels">
                 <div className="mm-panel mm-opened" id="mm-0">
