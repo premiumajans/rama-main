@@ -5,14 +5,15 @@ import {partnerItem, productItem} from "@/interfaces/common";
 import ReactHtmlParser from "react-html-parser";
 import Head from "next/head";
 import NotFound from "@/Components/NotFound/NotFound";
+import Image from "next/image";
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 
-const About = ({about,partner}:{about:productItem[], partner:partnerItem[]}) => {
+const About = ({about, partner}: { about: productItem[], partner: partnerItem[] }) => {
 
-    const {t,i18n} = useTranslation('common')
+    const {t, i18n} = useTranslation('common')
 
     const settingsBrand = {
-        autoplay:true,
+        autoplay: true,
         arrows: false,
         infinite: true,
         speed: 500,
@@ -42,7 +43,7 @@ const About = ({about,partner}:{about:productItem[], partner:partnerItem[]}) => 
             }
         ]
     };
-    return  <>
+    return <>
         <Head>
             <title>{t('about')}</title>
         </Head>
@@ -68,7 +69,8 @@ const About = ({about,partner}:{about:productItem[], partner:partnerItem[]}) => 
                                                             {Array.isArray(about) && about.map(item => {
                                                                 const translated = item.translations.find(item => item.locale === i18n.language)
 
-                                                                return <div key={item.id} className="row my-4">
+                                                                return <div  key={item.id}
+                                                                            className="row my-4">
                                                                     <div className="col-md-6 banner-infor background-2">
                                                                         <div className="banner-wrapper-infor">
                                                                             <div className="info">
@@ -85,12 +87,13 @@ const About = ({about,partner}:{about:productItem[], partner:partnerItem[]}) => 
                                                                         </div>
                                                                     </div>
                                                                     <div className="col-md-6">
-                                                                        <div style={{height: '100%'}}
-                                                                             className="banner-image">
+                                                                        <div
+                                                                            className="banner-image">
                                                                             <a style={{height: '100%'}}>
-                                                                                <img style={{height: '100%'}}
-                                                                                     src={process.env['NEXT_PUBLIC_MAIN_PATH_WITHOUT_API'] + item.photo}
-                                                                                     alt={item.name}/>
+                                                                                <Image width={600} height={600}
+                                                                                       style={{height:350}}
+                                                                                       src={process.env['NEXT_PUBLIC_MAIN_PATH_WITHOUT_API'] + item.photo}
+                                                                                       alt={item.name}/>
                                                                             </a>
                                                                         </div>
                                                                     </div>
@@ -138,7 +141,7 @@ const About = ({about,partner}:{about:productItem[], partner:partnerItem[]}) => 
 };
 
 
-export async function getServerSideProps(context:any) {
+export async function getServerSideProps(context: any) {
     const about = await fetch(process.env['NEXT_PUBLIC_MAIN_PATH'] + '/about')
     const aboutJson = await about.json()
 
@@ -147,14 +150,11 @@ export async function getServerSideProps(context:any) {
     return {
         props: {
             about: aboutJson.about,
-            partner:partnerJson.partner,
+            partner: partnerJson.partner,
             ...(await serverSideTranslations(context.locale, ["common"])),
         }
     }
 }
-
-
-
 
 
 export default About;
