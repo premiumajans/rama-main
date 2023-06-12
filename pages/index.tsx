@@ -44,10 +44,10 @@ function Home({sliders}:{sliders:sliderItem[]}) {
                         {Array.isArray(sliders) && sliders.map(item => {
                             const translated = item.translations.find(item => item.locale === i18n.language)
                             return <li key={item.id} style={{height: '100vh'}}>
-                                <video style={{objectFit: 'fill', height: '80vh'}} playsInline autoPlay loop muted
+                                <video  style={{objectFit: 'fill', height: '80vh'}}  autoPlay={true} loop muted
                                        width="100%" height="100%"
                                        id="home_video" className="full full_h">
-                                    <source src={process.env['NEXT_PUBLIC_MAIN_PATH_WITHOUT_API'] + item.photo}
+                                    <source  src={process.env['NEXT_PUBLIC_MAIN_PATH_WITHOUT_API'] + item.photo}
                                             type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;"/>
 
                                 </video>
