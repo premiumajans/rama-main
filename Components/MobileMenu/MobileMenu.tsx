@@ -19,14 +19,6 @@ const MobileMenu = () => {
                         <li className="level-0 menu-item ">
                             <a onClick={() => {
                                 changeMenu()
-                                push('/')
-
-
-                            }}><span className="menu-item-text">{t('menu')}</span></a>
-                        </li>
-                        <li className="level-0 menu-item ">
-                            <a onClick={() => {
-                                changeMenu()
                                 push("/about")
 
 
