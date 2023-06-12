@@ -158,6 +158,9 @@ footer {
 }
 
 @media (max-width: 576px) {
+  .shop-details .product-images .img-item img {
+    height: 300px !important;
+  }
   .content-img {
     text-align: center;
   }
