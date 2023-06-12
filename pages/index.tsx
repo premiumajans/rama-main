@@ -56,7 +56,7 @@ function Home({sliders}:{sliders:sliderItem[]}) {
                                     <div className="full full_h after_logo">
                                         <div className="slider_content home_slide_content" style={{paddingTop: "0px"}}>
                                             <h1></h1>
-                                            <h2></h2><h1><span style={{color: "#00b7ce"}}>{translated?.title}</span>
+                                            <h2></h2><h1><span style={{color: "white"}}>{translated?.title}</span>
                                         </h1>
                                             {ReactHtmlParser(translated?.description!)}</div>
                                     </div>
