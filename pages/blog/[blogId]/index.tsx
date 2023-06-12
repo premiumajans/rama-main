@@ -56,7 +56,7 @@ const BlogItem = ({blog}:{blog:productItem}) => {
                                 <div className="section-container p-l-r">
                                     <div className="post-details no-sidebar">
                                         <div style={{textAlign: 'center'}} className="post-image">
-                                            <Image style={{width: '100%', height: '50%'}} width={800} height={1200}
+                                            <Image style={{width: '100%', height: '50%'}} width={2000} height={2000}
                                                    src={process.env['NEXT_PUBLIC_MAIN_PATH_WITHOUT_API'] + photo}
                                                    alt={translated?.name!}/>
                                         </div>
