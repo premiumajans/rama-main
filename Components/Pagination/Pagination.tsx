@@ -25,7 +25,7 @@ const Pagination = ({setPagination, data, pagination}: {
     }
 
     return <>
-        <nav className="pagination">
+        {Math.ceil(data.length / 10) !== 1 ?  <nav className="pagination">
             <ul className="page-numbers">
                 <li onClick={() => {
                     if (pagination - 1 >= 1) {
@@ -41,7 +41,8 @@ const Pagination = ({setPagination, data, pagination}: {
                     }
                 }}><a className="next page-numbers">Next</a></li>
             </ul>
-        </nav>
+        </nav> : '' }
+
     </>
 };
 
