@@ -18,6 +18,8 @@ function Home({sliders}:{sliders:sliderItem[]}) {
     })
 
     const settings = {
+        fade:true,
+        autoplay:true,
         dots: true,
         infinite: true,
         speed: 500,
