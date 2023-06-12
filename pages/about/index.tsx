@@ -41,131 +41,98 @@ const About = ({about,partner}:{about:productItem[], partner:partnerItem[]}) => 
             }
         ]
     };
-    return  typeof  about !== 'string' || typeof  partner !== 'string' ? <>
+    return  <>
         <Head>
             <title>{t('about')}</title>
         </Head>
-        <div id="site-main" className="site-main">
-            <div id="main-content" className="main-content">
-                <div id="primary" className="content-area">
-                    <PageTitle pageTitle={t('about')} currentAddress={t('about')}/>
+        {typeof about !== 'string' || typeof partner !== 'string' ? <>
+            <div id="site-main" className="site-main">
+                <div id="main-content" className="main-content">
+                    <div id="primary" className="content-area">
+                        <PageTitle pageTitle={t('about')} currentAddress={t('about')}/>
 
-                    <div data-aos="fade-zoom-in"
-                         data-aos-easing="ease-in-back"
-                         data-aos-delay="300"
-                         data-aos-offset="0"
-                         data-aos-duration="700" id="content" className="site-content" role="main">
-                        <div className="page-about-us">
-                            <section className="section section-padding m-b-70">
-                                <div className="section-container">
-                                    <div className="block block-banners banners-effect">
-                                        <div className="block-widget-wrap">
-                                            <div className="block-content">
-                                                <div className="block-widget-banner layout-16 no-space">
-                                                    <div className="banners">
-                                                        {Array.isArray(about) && about.map(item => {
-                                                            const translated = item.translations.find(item => item.locale === i18n.language)
+                        <div data-aos="fade-zoom-in"
+                             data-aos-easing="ease-in-back"
+                             data-aos-delay="300"
+                             data-aos-offset="0"
+                             data-aos-duration="700" id="content" className="site-content" role="main">
+                            <div className="page-about-us">
+                                <section className="section section-padding m-b-70">
+                                    <div className="section-container">
+                                        <div className="block block-banners banners-effect">
+                                            <div className="block-widget-wrap">
+                                                <div className="block-content">
+                                                    <div className="block-widget-banner layout-16 no-space">
+                                                        <div className="banners">
+                                                            {Array.isArray(about) && about.map(item => {
+                                                                const translated = item.translations.find(item => item.locale === i18n.language)
 
-                                                            return   <div key={item.id} className="row my-4">
-                                                                <div className="col-md-6 banner-infor background-2">
-                                                                    <div className="banner-wrapper-infor">
-                                                                        <div className="info">
-                                                                            <div className="content">
-                                                                                <h3 style={{overflowWrap: 'anywhere'}} className="title-banner">{translated?.title}</h3>
-                                                                                <div style={{overflowWrap: 'anywhere'}} className="banner-image-description">
-                                                                                    {ReactHtmlParser(translated?.description!)}
+                                                                return <div key={item.id} className="row my-4">
+                                                                    <div className="col-md-6 banner-infor background-2">
+                                                                        <div className="banner-wrapper-infor">
+                                                                            <div className="info">
+                                                                                <div className="content">
+                                                                                    <h3 style={{overflowWrap: 'anywhere'}}
+                                                                                        className="title-banner">{translated?.title}</h3>
+                                                                                    <div
+                                                                                        style={{overflowWrap: 'anywhere'}}
+                                                                                        className="banner-image-description">
+                                                                                        {ReactHtmlParser(translated?.description!)}
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                </div>
-                                                                <div className="col-md-6">
-                                                                    <div style={{height:'100%'}} className="banner-image">
-                                                                        <a style={{height:'100%'}}>
-                                                                            <img style={{height:'100%'}} src={process.env['NEXT_PUBLIC_MAIN_PATH_WITHOUT_API'] + item.photo}
-                                                                                 alt={item.name}/>
-                                                                        </a>
+                                                                    <div className="col-md-6">
+                                                                        <div style={{height: '100%'}}
+                                                                             className="banner-image">
+                                                                            <a style={{height: '100%'}}>
+                                                                                <img style={{height: '100%'}}
+                                                                                     src={process.env['NEXT_PUBLIC_MAIN_PATH_WITHOUT_API'] + item.photo}
+                                                                                     alt={item.name}/>
+                                                                            </a>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                        })}
+                                                            })}
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </section>
+                                </section>
 
 
-                            <section className="section section-padding top-border p-t-20 m-b-20">
-                                <div className="section-container">
-                                    <div className="block block-image slider">
-                                        <div className="block-widget-wrap">
-                                            <MySlider settings={settingsBrand}>
-                                                {Array.isArray(partner) && partner.map(item => {
-                                                    return   <div key={item.id} className="item slick-slide">
-                                                        <div className="item-image">
-                                                            <a href={item.link}>
-                                                                <img width="450" height="450" src={process.env['NEXT_PUBLIC_MAIN_PATH_WITHOUT_API'] + item.photo}
-                                                                     alt={item.link}/>
-                                                            </a>
+                                <section className="section section-padding top-border p-t-20 m-b-20">
+                                    <div className="section-container">
+                                        <div className="block block-image slider">
+                                            <div className="block-widget-wrap">
+                                                <MySlider settings={settingsBrand}>
+                                                    {Array.isArray(partner) && partner.map(item => {
+                                                        return <div key={item.id} className="item slick-slide">
+                                                            <div className="item-image">
+                                                                <a href={item.link}>
+                                                                    <img width="450" height="450"
+                                                                         src={process.env['NEXT_PUBLIC_MAIN_PATH_WITHOUT_API'] + item.photo}
+                                                                         alt={item.link}/>
+                                                                </a>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                })}
+                                                    })}
 
-                                                {/*<div className="item slick-slide">*/}
-                                                {/*    <div className="item-image">*/}
-                                                {/*        <a href="#">*/}
-                                                {/*            <img width="450" height="450" src="/media/brand/2.jpg"*/}
-                                                {/*                 alt="Brand 2"/>*/}
-                                                {/*        </a>*/}
-                                                {/*    </div>*/}
-                                                {/*</div>*/}
-                                                {/*<div className="item slick-slide">*/}
-                                                {/*    <div className="item-image">*/}
-                                                {/*        <a href="#">*/}
-                                                {/*            <img width="450" height="450" src="/media/brand/3.jpg"*/}
-                                                {/*                 alt="Brand 3"/>*/}
-                                                {/*        </a>*/}
-                                                {/*    </div>*/}
-                                                {/*</div>*/}
-                                                {/*<div className="item slick-slide">*/}
-                                                {/*    <div className="item-image">*/}
-                                                {/*        <a href="#">*/}
-                                                {/*            <img width="450" height="450" src="/media/brand/4.jpg"*/}
-                                                {/*                 alt="Brand 4"/>*/}
-                                                {/*        </a>*/}
-                                                {/*    </div>*/}
-                                                {/*</div>*/}
-                                                {/*<div className="item slick-slide">*/}
-                                                {/*    <div className="item-image">*/}
-                                                {/*        <a href="#">*/}
-                                                {/*            <img width="450" height="450" src="/media/brand/5.jpg"*/}
-                                                {/*                 alt="Brand 5"/>*/}
-                                                {/*        </a>*/}
-                                                {/*    </div>*/}
-                                                {/*</div>*/}
-                                                {/*<div className="item slick-slide">*/}
-                                                {/*    <div className="item-image">*/}
-                                                {/*        <a href="#">*/}
-                                                {/*            <img width="450" height="450" src="/media/brand/5.jpg"*/}
-                                                {/*                 alt="Brand 5"/>*/}
-                                                {/*        </a>*/}
-                                                {/*    </div>*/}
-                                                {/*</div>*/}
-
-                                            </MySlider>
+                                                </MySlider>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </section>
+                                </section>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </> : <NotFound/>
+        </> : <NotFound/>}
+    </>
 
 };
 

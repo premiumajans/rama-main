@@ -20,20 +20,20 @@ const BlogItem = ({blog}:{blog:productItem}) => {
     const translated = translations?.find(item => item.locale === i18n.language)
 
     return <>
-        {typeof  blog !== 'string' ?  <>
-            <Head>
-                <meta name="keywords" content={translations?.find(item => item.locale === i18n.language)?.name}/>
-                <title>
-                    {translated?.name ? translated?.name + ' | GEAD' : 'GEAD'}
-                </title>
+        <Head>
+            <meta name="keywords" content={translations?.find(item => item.locale === i18n.language)?.name}/>
+            <title>
+                {translated?.name ? translated?.name + ' | RAMA GROUP' : 'RAMA GROUP'}
+            </title>
 
-                <meta property="og:title" content={translated?.name ? translated?.name + ' | GEAD' : 'GEAD'}/>
-                <meta property="og:description"
-                      content={translations?.find(item => item.locale === i18n.language)?.description}/>
-                <meta property="og:image" content={process.env.NEXT_PUBLIC_MAIN_PATH_WITHOUT_API! + photo}/>
-                <meta property="og:url"
-                      content={process.env.NEXT_PUBLIC_MAIN_PATH_WITHOUT_API + 'writer/' + query.portfolioId}/>
-            </Head>
+            <meta property="og:title" content={translated?.name ? translated?.name + ' | RAMA GROUP' : 'RAMA GROUP'}/>
+            <meta property="og:description"
+                  content={translations?.find(item => item.locale === i18n.language)?.description}/>
+            <meta property="og:image" content={process.env.NEXT_PUBLIC_MAIN_PATH_WITHOUT_API! + photo}/>
+            <meta property="og:url"
+                  content={process.env.NEXT_PUBLIC_MAIN_PATH_WITHOUT_API + 'writer/' + query.portfolioId}/>
+        </Head>
+        {typeof  blog !== 'string' ?  <>
             <div id="site-main" className="site-main">
                 <FsLightbox
                     toggler={toggler}
