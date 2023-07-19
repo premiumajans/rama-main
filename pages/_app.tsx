@@ -5,8 +5,6 @@ import SearchWraper from "@/Components/SearchWraper/SearchWraper";
 import BackToTop from "@/Components/BackToTop/BackToTop";
 import Footer from "@/Components/Footer/Footer";
 import Header from "@/Components/Header/Header";
-import {serverSideTranslations} from "next-i18next/serverSideTranslations";
-// import  '../i18n'
 import {StrictMode, useEffect, useState} from "react";
 import  AOS from  'aos'
 import 'aos/dist/aos.css';
@@ -40,12 +38,6 @@ function App({ Component, pageProps }: AppProps) {
     <SearchWraper/>
     {visible ? <MobileMenu/> : ''}
 
-    {/*<div className="page-preloader" >*/}
-    {/*  <div className="loader">*/}
-    {/*    <div></div>*/}
-    {/*    <div></div>*/}
-    {/*  </div>*/}
-    {/*</div>*/}
   </>
 }
 

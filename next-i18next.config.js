@@ -4,10 +4,5 @@ module.exports = {
         defaultLocale: 'az',
         locales: ['az', 'en', 'ru'],
         localeDetection: false,
-        localeSubpaths: {
-            en: 'en',
-            az: 'az',
-            ru:'ru'
-        },
     },
 }
